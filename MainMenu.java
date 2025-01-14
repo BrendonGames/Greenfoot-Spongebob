@@ -17,6 +17,12 @@ public class MainMenu extends World
     public MainMenu()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1);
+        super(600, 100, 1);
+        // showText("0", 300, 50);
+    }
+    
+    public void act()
+    {
+        showText(Integer.toString(Greenfoot.getMicLevel()), 300, 50);
     }
 }
