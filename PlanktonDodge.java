@@ -15,5 +15,6 @@ public class PlanktonDodge extends Minigames
      */
     public PlanktonDodge()
     {
+        super(1000, 1000, 1);
     }
 }

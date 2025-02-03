@@ -3,17 +3,54 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class PlatformerSpongebob here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Brendon
+ * @29/01/2025
  */
 public class PlatformerSpongebob extends Player
 {
-    /**
-     * Act - do whatever the PlatformerSpongebob wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    private int minWidth;
+    private int minHeight;
+    private int maxWidth;
+    private int maxHeight;
+
+    public PlatformerSpongebob()
+    {
+        minWidth = getImage().getWidth();
+        minHeight = getImage().getHeight();
+        maxWidth = (int) Math.round(getImage().getWidth() * 1.5);
+        maxHeight = (int) Math.round(getImage().getHeight() * 1.5);
+    }
+
     public void act()
     {
-        // Add your action code here.
+        // movement in 3D space
+        if (Greenfoot.isKeyDown("d") || Greenfoot.isKeyDown("right"))
+        {
+            setLocation(getX() + 2, getY());
+        }
+
+        if (Greenfoot.isKeyDown("a") || Greenfoot.isKeyDown("left"))
+        {
+            setLocation(getX() - 2, getY());
+        }
+
+        if ((Greenfoot.isKeyDown("w") || Greenfoot.isKeyDown("up")) && (getImage().getWidth() >= minWidth || getImage().getHeight() >= minHeight))
+        {
+            setLocation(getX(), getY() - 10);
+            getImage().scale(
+                (int) Math.round(getImage().getWidth() / 1.1),
+                (int) Math.round(getImage().getHeight() / 1.1)
+            );
+        }
+        
+        if ((Greenfoot.isKeyDown("s") || Greenfoot.isKeyDown("down")) && (getImage().getWidth() <= maxWidth || getImage().getHeight() <= maxHeight))
+        {
+            setLocation(getX(), getY() + 10);
+            getImage().scale(
+                (int) Math.round(getImage().getWidth() * 1.1),
+                (int) Math.round(getImage().getHeight() * 1.1)
+            );
+        }
+
     }
 }

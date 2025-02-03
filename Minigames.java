@@ -13,9 +13,9 @@ public class Minigames extends World
      * Constructor for objects of class Minigames.
      * 
      */
-    public Minigames()
+    public Minigames(int x, int y, int cells)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
+        super(x, y, cells); 
     }
 }
