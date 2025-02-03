@@ -1,7 +1,12 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class textActor here.
+ * This actor is an important reference for all the text that appears in the game. 
+ * Instead of hardcoding the text within different actors and having to search for 
+ * it when you need to edit some text, you can just do so here.
+ * 
+ * This also allows us to add support for a different language (For example Dutch 
+ * like we planned if we have time).
  * 
  * @Brendon
  * @03/02/2025
@@ -14,6 +19,7 @@ public class Text extends Actor
     private int locationX;
     private int locationY;
 
+    // Constructor variables to local variables
     public Text(int langIdConstructor, int textIdConstructor)
     {
         langId = langIdConstructor;

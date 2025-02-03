@@ -31,7 +31,7 @@ public class PlatformerSpongebobOutside extends Player
     {
         if (getX() >= 450 && getX() <= 495 &&  getImage().getWidth() <= maxWidth || getImage().getHeight() <= maxHeight)
         {
-            
+            // Check if in front of Squidwards door
         }
     }
 
