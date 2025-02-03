@@ -16,6 +16,6 @@ public class GaryIsMissingOutside extends Minigames
     public GaryIsMissingOutside()
     {
         super(1000, 761, 1);
-        addObject(new PlatformerSpongebob(), 731, 541);
+        addObject(new PlatformerSpongebobOutside(), 731, 541);
     }
 }
