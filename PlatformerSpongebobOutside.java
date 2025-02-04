@@ -15,6 +15,8 @@ public class PlatformerSpongebobOutside extends Player
 
     public PlatformerSpongebobOutside()
     {
+        getImage().scale(getImage().getWidth() / 5, getImage().getHeight() / 5);
+        
         minWidth = getImage().getWidth();
         minHeight = getImage().getHeight();
         maxWidth = (int) Math.round(getImage().getWidth() * 1.5);
