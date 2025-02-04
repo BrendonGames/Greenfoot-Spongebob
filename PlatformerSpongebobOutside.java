@@ -29,9 +29,16 @@ public class PlatformerSpongebobOutside extends Player
     
     private void checkLocation()
     {
+        // Check if in front of Squidward's door
         if (getX() >= 450 && getX() <= 495 &&  getImage().getWidth() <= maxWidth || getImage().getHeight() <= maxHeight)
         {
             // Check if in front of Squidwards door
+        }
+
+        // check if in from of Patrick's door
+        if (getX() >= 5 && getX() <= 5 &&  getImage().getWidth() <= maxWidth || getImage().getHeight() <= maxHeight)
+        {
+            
         }
     }
 
