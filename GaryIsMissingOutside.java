@@ -8,7 +8,8 @@
  */
 public class GaryIsMissingOutside extends Minigames
 {
-
+    //the score veriable
+    private int scorePlatformer;
     /**
      * Constructor for objects of class GaryIsMissing.
      * 
