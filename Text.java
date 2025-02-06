@@ -18,53 +18,76 @@ public class Text extends Actor
     private String text;
     private int locationX;
     private int locationY;
+    private boolean textShown;
+    private int appearTime;
 
     // Constructor variables to local variables
     public Text(int langIdConstructor, int textIdConstructor)
     {
         langId = langIdConstructor;
         textId = textIdConstructor;
+        textShown = false;
     }
     
     public void act()
     {
-        switch (langId) {
-            // English is selected
-            case 0:
+        // Checks whether text is already shown 
+        if (!textShown) {
+            switch (langId) {
+                // English is selected
+                case 0:
 
-                // look for which text is selected
-                switch (textId) {
-                    case 0:
-                        text = "Hello, am debug text";
-                        locationX = getWorld().getWidth() / 2;
-                        locationY = getWorld().getHeight() / 2;
-                        break;
+                    // look for which text is selected
+                    switch (textId) {
+                        case 0:
+                            text = "Hello, am debug text";
+                            locationX = getWorld().getWidth() / 2;
+                            locationY = getWorld().getHeight() / 2;
+                            break;
 
-                    // Shows which textId is selected, should only appear when textId doesn't exist
-                    default:
-                        text = "Hellow, wrong textId: " + textId;
-                        locationX = getWorld().getWidth() / 2;
-                        locationY = getWorld().getHeight() / 2;
-                        break;
-                }
-                // end of possible English text
-                break;
-            // End of English
-            // Dutch is selected
-            case 1:
-                text = "NL selected";
-                locationX = getWorld().getWidth() / 2;
-                locationY = getWorld().getHeight() / 2;
-                // Dutch: only if time
-                break;
-            // End of Dutch
-            default:
-                text = "How did you get a different langId?: " + langId;
-                locationX = getWorld().getWidth() / 2;
-                locationY = getWorld().getHeight() / 2;
-                break;
+                        case 1:
+                            text = "GARY, WHERE ARE YOU!?";
+                            locationX = 731;
+                            locationY = 469;
+                            appearTime = 125;
+                            break;
+
+                        // Shows which textId is selected, should only appear when textId doesn't exist
+                        default:
+                            text = "Hellow, wrong textId: " + textId;
+                            locationX = getWorld().getWidth() / 2;
+                            locationY = getWorld().getHeight() / 2;
+                            break;
+                    }
+                    // end of possible English text
+                    break;
+                // End of English
+                // Dutch is selected
+                case 1:
+                    text = "NL selected";
+                    locationX = getWorld().getWidth() / 2;
+                    locationY = getWorld().getHeight() / 2;
+                    // Dutch: only if time
+                    break;
+                // End of Dutch
+                default:
+                    text = "How did you get a different langId?: " + langId;
+                    locationX = getWorld().getWidth() / 2;
+                    locationY = getWorld().getHeight() / 2;
+                    break;
+            }
+
+            getWorld().showText(text, locationX, locationY);
+            textShown = true;
         }
+        
+        appearTime--;
 
-        getWorld().showText(text, locationX, locationY);
+        // Text appears for appearTime amount of acts
+        if (appearTime <= 0)
+        {
+            getWorld().showText("", locationX, locationY);
+            getWorld().removeObject(this);
+        }
     }
 }

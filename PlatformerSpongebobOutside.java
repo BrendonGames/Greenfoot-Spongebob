@@ -36,6 +36,7 @@ public class PlatformerSpongebobOutside extends Player
         int width = getImage().getWidth();
         int height = getImage().getHeight();
     
+        boolean inFrontOfSpongebobsDoor = (x >= 700 && x <= 765) && (width <= minWidth && height <= minHeight);
         boolean inFrontOfSquidwardsDoor = (x >= 445 && x <= 535) && (width <= minWidth && height <= minHeight);
         boolean inFrontOfPatricksDoor = (x >= 160 && x <= 280) && (width <= minWidth && height <= minHeight);
     

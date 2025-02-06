@@ -21,7 +21,7 @@ public class PlanktonDodge extends Minigames
         
     }
     
-     /**
+    /**
       * adding the score of the jellyfish's
       */
     public void addScore()
