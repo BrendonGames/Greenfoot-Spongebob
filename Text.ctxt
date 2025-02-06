@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Text
-comment0.text=\n\ This\ actor\ is\ an\ important\ reference\ for\ all\ the\ text\ that\ appears\ in\ the\ game.\ \n\ Instead\ of\ hardcoding\ the\ text\ within\ different\ actors\ and\ having\ to\ search\ for\ \n\ it\ when\ you\ need\ to\ edit\ some\ text,\ you\ can\ just\ do\ so\ here.\n\ \n\ This\ also\ allows\ us\ to\ add\ support\ for\ a\ different\ language\ (For\ example\ Dutch\ \n\ like\ we\ planned\ if\ we\ have\ time).\n\ \n\ @Brendon\n\ @03/02/2025\n
+comment0.text=\r\n\ This\ actor\ is\ an\ important\ reference\ for\ all\ the\ text\ that\ appears\ in\ the\ game.\ \r\n\ Instead\ of\ hardcoding\ the\ text\ within\ different\ actors\ and\ having\ to\ search\ for\ \r\n\ it\ when\ you\ need\ to\ edit\ some\ text,\ you\ can\ just\ do\ so\ here.\r\n\ \r\n\ This\ also\ allows\ us\ to\ add\ support\ for\ a\ different\ language\ (For\ example\ Dutch\ \r\n\ like\ we\ planned\ if\ we\ have\ time).\r\n\ \r\n\ @Brendon\r\n\ @03/02/2025\r\n
 comment1.params=langIdConstructor\ textIdConstructor
 comment1.target=Text(int,\ int)
 comment2.params=

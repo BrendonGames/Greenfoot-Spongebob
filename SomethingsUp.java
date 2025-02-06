@@ -8,12 +8,22 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class SomethingsUp extends Assets
 {
-    /**
-     * Act - do whatever the SomethingsUp wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    public SomethingsUp()
+    {
+        getImage().scale(getImage().getWidth() * 3, getImage().getHeight() * 3);
+    }
+
     public void act()
     {
-        // Add your action code here.
+        PlatformerSpongebobOutside spongebob = (PlatformerSpongebobOutside)getWorld().getObjects(PlatformerSpongebobOutside.class).get(0);
+        if (!spongebob.isAtPOI)
+        {
+            beGone();
+        }
+    }
+    
+    public void beGone()
+    {
+        getWorld().removeObject(this);
     }
 }

@@ -12,6 +12,7 @@ public class PlatformerSpongebobOutside extends Player
     private int minHeight;
     private int maxWidth;
     private int maxHeight;
+    public boolean isAtPOI;
 
     public PlatformerSpongebobOutside()
     {
@@ -31,16 +32,29 @@ public class PlatformerSpongebobOutside extends Player
     
     private void checkLocation()
     {
-        // Check if in front of Squidward's door
-        if (getX() >= 450 && getX() <= 495 &&  getImage().getWidth() <= maxWidth || getImage().getHeight() <= maxHeight)
+        int x = getX();
+        int width = getImage().getWidth();
+        int height = getImage().getHeight();
+    
+        boolean inFrontOfSquidwardsDoor = (x >= 445 && x <= 535) && (width <= minWidth && height <= minHeight);
+        boolean inFrontOfPatricksDoor = (x >= 160 && x <= 280) && (width <= minWidth && height <= minHeight);
+    
+        if (!isAtPOI)
         {
-            // Check if in front of Squidwards door
+            if (inFrontOfSquidwardsDoor)
+            {
+                isAtPOI = true;
+                getWorld().addObject(new SomethingsUp(), 472, 450);
+            }
+            else if (inFrontOfPatricksDoor)
+            {
+                isAtPOI = true;
+                getWorld().addObject(new SomethingsUp(), 220, 450);
+            }
         }
-
-        // check if in from of Patrick's door
-        if (getX() >= 5 && getX() <= 5 &&  getImage().getWidth() <= maxWidth || getImage().getHeight() <= maxHeight)
+        else if (!inFrontOfSquidwardsDoor && !inFrontOfPatricksDoor)
         {
-            
+            isAtPOI = false;
         }
     }
 
@@ -56,7 +70,7 @@ public class PlatformerSpongebobOutside extends Player
         }
 
         if ((Greenfoot.isKeyDown("w") || Greenfoot.isKeyDown("up"))
-                && (getImage().getWidth() >= minWidth || getImage().getHeight() >= minHeight)) {
+            && (getImage().getWidth() >= minWidth || getImage().getHeight() >= minHeight)) {
             setLocation(getX(), getY() - 10);
             getImage().scale(
                 (int) Math.round(getImage().getWidth() / 1.1),
