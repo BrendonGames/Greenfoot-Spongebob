@@ -52,8 +52,13 @@ public class PlatformerSpongebobOutside extends Player
                 isAtPOI = true;
                 getWorld().addObject(new SomethingsUp(), 220, 450);
             }
+            else if (inFrontOfSpongebobsDoor)
+            {
+                isAtPOI = true;
+                getWorld().addObject(new SomethingsUp(), 733, 440);
+            }
         }
-        else if (!inFrontOfSquidwardsDoor && !inFrontOfPatricksDoor)
+        else if (!inFrontOfSquidwardsDoor && !inFrontOfPatricksDoor && !inFrontOfSpongebobsDoor)
         {
             isAtPOI = false;
         }

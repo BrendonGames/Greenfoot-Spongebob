@@ -14,9 +14,10 @@ public class GaryIsMissingOutside extends Minigames
      * Constructor for objects of class GaryIsMissing.
      * 
      */
-    public GaryIsMissingOutside()
+    public GaryIsMissingOutside(int jellyfish /* other vars settings; secrets */)
     {
         super(1000, 761, 1);
+        scorePlatformer = jellyfish;
         addObject(new PlatformerSpongebobOutside(), 731, 541);
         addObject(new Text(0, 1), 1, 1);
     }

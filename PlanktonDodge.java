@@ -15,10 +15,10 @@ public class PlanktonDodge extends Minigames
      * Constructor for objects of class PlanktonDodge.
      * 
      */
-    public PlanktonDodge()
+    public PlanktonDodge(int jellyfish)
     {
         super(1000, 1000, 1);
-        
+        scorePlankton = jellyfish;
     }
     
     /**
