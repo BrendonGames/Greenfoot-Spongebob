@@ -56,6 +56,10 @@ public class PlatformerSpongebobOutside extends Player
             {
                 isAtPOI = true;
                 getWorld().addObject(new SomethingsUp(), 733, 440);
+                if (Greenfoot.isKeyDown("space"))
+                {
+                    
+                }
             }
         }
         else if (!inFrontOfSquidwardsDoor && !inFrontOfPatricksDoor && !inFrontOfSpongebobsDoor)
@@ -67,16 +71,19 @@ public class PlatformerSpongebobOutside extends Player
     private void checkMovement()
     {
         // movement in 3D space
-        if (Greenfoot.isKeyDown("d") || Greenfoot.isKeyDown("right")) {
+        if (Greenfoot.isKeyDown("d") || Greenfoot.isKeyDown("right")) 
+        {
             setLocation(getX() + 2, getY());
         }
 
-        if (Greenfoot.isKeyDown("a") || Greenfoot.isKeyDown("left")) {
+        if (Greenfoot.isKeyDown("a") || Greenfoot.isKeyDown("left")) 
+        {
             setLocation(getX() - 2, getY());
         }
 
         if ((Greenfoot.isKeyDown("w") || Greenfoot.isKeyDown("up"))
-            && (getImage().getWidth() >= minWidth || getImage().getHeight() >= minHeight)) {
+            && (getImage().getWidth() >= minWidth || getImage().getHeight() >= minHeight)) 
+        {
             setLocation(getX(), getY() - 10);
             getImage().scale(
                 (int) Math.round(getImage().getWidth() / 1.1),
@@ -85,7 +92,8 @@ public class PlatformerSpongebobOutside extends Player
         }
 
         if ((Greenfoot.isKeyDown("s") || Greenfoot.isKeyDown("down"))
-                && (getImage().getWidth() <= maxWidth || getImage().getHeight() <= maxHeight)) {
+            && (getImage().getWidth() <= maxWidth || getImage().getHeight() <= maxHeight)) 
+        {
             setLocation(getX(), getY() + 10);
             getImage().scale(
                     (int) Math.round(getImage().getWidth() * 1.1),
