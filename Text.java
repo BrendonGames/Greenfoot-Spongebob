@@ -52,6 +52,26 @@ public class Text extends Actor
                             appearTime = 125;
                             break;
 
+                        case 2:
+                            text = "No... he's not at home";
+                            locationX = 731;
+                            locationY = 469;
+                            appearTime = 100;
+                            break;
+
+                        case 3:
+                            text = "WHAT DO YOU WANT SPONGEBOB!?\nGO AWAY";
+                            locationX = 472;
+                            locationY = 469;
+                            appearTime = 125;
+                            break;
+
+                        case 4:
+                            text = "Maybe Gary's over here!?\nPatrick's not home, it'll be fine if I go in";
+                            locationX = 220;
+                            locationY = 469;
+                            appearTime = 150;
+
                         // Shows which textId is selected, should only appear when textId doesn't exist
                         default:
                             text = "Hellow, wrong textId: " + textId;
