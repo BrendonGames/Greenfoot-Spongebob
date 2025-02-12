@@ -5,8 +5,8 @@ all they need to know. The comments should usually include at least:
 ------------------------------------------------------------------------
 
 PROJECT TITLE: Spongebob
-PURPOSE OF PROJECT:
-VERSION or DATE:
-HOW TO START THIS PROJECT:
-AUTHORS:
-USER INSTRUCTIONS:
+PURPOSE OF PROJECT: video game
+VERSION or DATE: idk
+HOW TO START THIS PROJECT: Menus > new MainMenu()
+AUTHORS: Brendon; Laynah; Jesse; Quillan;
+USER INSTRUCTIONS: none
