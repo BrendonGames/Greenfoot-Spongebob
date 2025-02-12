@@ -8,12 +8,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Squidward extends Characters
 {
-    /**
-     * Act - do whatever the Octo wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    public Squidward()
+    {
+        getImage().scale(getImage().getWidth() / 6, getImage().getHeight() / 6);
+    }
+    
     public void act()
     {
-        // Add your action code here.
+        getWorld().setPaintOrder(PlatformerSpongebobOutside.class);
     }
 }

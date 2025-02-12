@@ -10,16 +10,18 @@ public class GaryIsMissingOutside extends Minigames
 {
     //the score veriable
     private int scorePlatformer;
+    public int langId;
     /**
      * Constructor for objects of class GaryIsMissing.
      * 
      */
-    public GaryIsMissingOutside(int jellyfish /* other vars settings; secrets */)
+    public GaryIsMissingOutside(int jellyfish, int languageId /* other vars settings; secrets */)
     {
         super(1000, 761, 1);
         scorePlatformer = jellyfish;
-        addObject(new PlatformerSpongebobOutside(), 731, 541);
-        addObject(new Text(0, 1), 1, 1);
-        showText("Press space on '?' to interact", getWidth() / 2, 10);
+        langId = languageId;
+        addObject(new PlatformerSpongebobOutside(langId), 731, 541);
+        addObject(new Text(langId, 1), 1, 1);
+        addObject(new Text(langId, 5), 1, 1);
     }
 }

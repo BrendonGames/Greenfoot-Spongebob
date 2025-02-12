@@ -60,10 +60,10 @@ public class Text extends Actor
                             break;
 
                         case 3:
-                            text = "WHAT DO YOU WANT SPONGEBOB!?\nGO AWAY";
+                            text = "WHAT DO YOU WANT\nSPONGEBOB!?\nGO AWAY!";
                             locationX = 472;
-                            locationY = 469;
-                            appearTime = 125;
+                            locationY = 400;
+                            appearTime = 150;
                             break;
 
                         case 4:
@@ -71,6 +71,14 @@ public class Text extends Actor
                             locationX = 220;
                             locationY = 469;
                             appearTime = 150;
+                            break;
+
+                        case 5:
+                            text = "Press space on '?' to interact";
+                            locationX = getWorld().getWidth() / 2;
+                            locationY = 10;
+                            appearTime = -1;
+                            break;
 
                         // Shows which textId is selected, should only appear when textId doesn't exist
                         default:
@@ -104,7 +112,7 @@ public class Text extends Actor
         appearTime--;
 
         // Text appears for appearTime amount of acts
-        if (appearTime <= 0)
+        if (appearTime == 0)
         {
             getWorld().showText("", locationX, locationY);
             getWorld().removeObject(this);

@@ -15,18 +15,24 @@ public class PlatformerSpongebobOutside extends Player
     public boolean isAtPOI;
     public boolean isTextActive;
     private int textActiveTimer;
+    private boolean spawnedSquidward;
+    private int langId;
 
-    public PlatformerSpongebobOutside()
+    public PlatformerSpongebobOutside(int languageId)
     {
         getImage().scale(getImage().getWidth() / 5, getImage().getHeight() / 5);
 
         isTextActive = true;
         textActiveTimer = 125;
+
+        spawnedSquidward = false;
         
         minWidth = getImage().getWidth();
         minHeight = getImage().getHeight();
         maxWidth = (int) Math.round(getImage().getWidth() * 1.5);
         maxHeight = (int) Math.round(getImage().getHeight() * 1.5);
+
+        langId = languageId;
     }
 
     public void act()
@@ -41,39 +47,57 @@ public class PlatformerSpongebobOutside extends Player
         int x = getX();
         int width = getImage().getWidth();
         int height = getImage().getHeight();
-    
+        
         boolean inFrontOfSpongebobsDoor = (x >= 700 && x <= 765) && (width <= minWidth && height <= minHeight);
         boolean inFrontOfSquidwardsDoor = (x >= 445 && x <= 535) && (width <= minWidth && height <= minHeight);
         boolean inFrontOfPatricksDoor = (x >= 160 && x <= 280) && (width <= minWidth && height <= minHeight);
-    
+        
         if (!isTextActive)
         {
-            if (!isAtPOI) {
-                if (inFrontOfSquidwardsDoor) 
-                {
-                    isAtPOI = true;
+            if (inFrontOfSquidwardsDoor && !spawnedSquidward) {
+                // Check if SomethingsUp has already spawned
+                if (!isAtPOI) {
                     getWorld().addObject(new SomethingsUp(), 472, 440);
-                } 
-                else if (inFrontOfPatricksDoor) 
-                {
                     isAtPOI = true;
-                    getWorld().addObject(new SomethingsUp(), 220, 440);
-                } 
-                else if (inFrontOfSpongebobsDoor) 
-                {
-                    isAtPOI = true;
-                    getWorld().addObject(new SomethingsUp(), 733, 440);
-
-                    if (Greenfoot.isKeyDown("space") && !isTextActive) 
-                    {
-                        getWorld().addObject(new Squidward(), x, height);
-                    }
                 }
-            } else if (!inFrontOfSquidwardsDoor && !inFrontOfPatricksDoor && !inFrontOfSpongebobsDoor) 
+                // Pressed space in front of Squidward's door
+                if (Greenfoot.isKeyDown("space") && !isTextActive) 
+                {
+                    // Makes Squidward appear and tells Spongebob to go away
+                    getWorld().addObject(new Squidward(), 522, 510);
+                    getWorld().addObject(new Text(langId, 3), 0, 0);
+                    textActiveTimer = 150;
+                    spawnedSquidward = true;
+                }
+
+            } else if (inFrontOfPatricksDoor) {
+                if (!isAtPOI) {
+                    getWorld().addObject(new SomethingsUp(), 220, 440);
+                    isAtPOI = true;
+                }
+                // Pressed space in front of Patrick's door
+                if (Greenfoot.isKeyDown("space") && !isTextActive) 
+                {
+
+                }
+            } else if (inFrontOfSpongebobsDoor)
+            {
+                if (!isAtPOI)
+                {
+                    getWorld().addObject(new SomethingsUp(), 733, 440);
+                    isAtPOI = true;
+                }
+                // Pressed space in front of Spongebob's door
+                if (Greenfoot.isKeyDown("space") && !isTextActive)
+                {
+
+                }
+            }
+            else 
             {
                 isAtPOI = false;
             }
-        }
+        } 
     }
 
     private void checkMovement()
@@ -93,7 +117,8 @@ public class PlatformerSpongebobOutside extends Player
                 setLocation(getX(), getY() - 10);
                 getImage().scale(
                         (int) Math.round(getImage().getWidth() / 1.1),
-                        (int) Math.round(getImage().getHeight() / 1.1));
+                        (int) Math.round(getImage().getHeight() / 1.1)
+                        );
             }
 
             if ((Greenfoot.isKeyDown("s") || Greenfoot.isKeyDown("down"))
@@ -101,7 +126,8 @@ public class PlatformerSpongebobOutside extends Player
                 setLocation(getX(), getY() + 10);
                 getImage().scale(
                         (int) Math.round(getImage().getWidth() * 1.1),
-                        (int) Math.round(getImage().getHeight() * 1.1));
+                        (int) Math.round(getImage().getHeight() * 1.1)
+                        );
             }
         }
     }
@@ -110,6 +136,7 @@ public class PlatformerSpongebobOutside extends Player
     {
         if (textActiveTimer > 0)
         {
+            isTextActive = true;
             textActiveTimer--;
         } 
         else 
