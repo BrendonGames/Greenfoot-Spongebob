@@ -13,10 +13,15 @@ public class PlatformerSpongebobOutside extends Player
     private int maxWidth;
     private int maxHeight;
     public boolean isAtPOI;
+    public boolean isTextActive;
+    private int textActiveTimer;
 
     public PlatformerSpongebobOutside()
     {
         getImage().scale(getImage().getWidth() / 5, getImage().getHeight() / 5);
+
+        isTextActive = true;
+        textActiveTimer = 125;
         
         minWidth = getImage().getWidth();
         minHeight = getImage().getHeight();
@@ -26,6 +31,7 @@ public class PlatformerSpongebobOutside extends Player
 
     public void act()
     {
+        textCountDown();
         checkMovement();
         checkLocation();
     }
@@ -40,65 +46,75 @@ public class PlatformerSpongebobOutside extends Player
         boolean inFrontOfSquidwardsDoor = (x >= 445 && x <= 535) && (width <= minWidth && height <= minHeight);
         boolean inFrontOfPatricksDoor = (x >= 160 && x <= 280) && (width <= minWidth && height <= minHeight);
     
-        if (!isAtPOI)
+        if (!isTextActive)
         {
-            if (inFrontOfSquidwardsDoor)
-            {
-                isAtPOI = true;
-                getWorld().addObject(new SomethingsUp(), 472, 440);
-            }
-            else if (inFrontOfPatricksDoor)
-            {
-                isAtPOI = true;
-                getWorld().addObject(new SomethingsUp(), 220, 440);
-            }
-            else if (inFrontOfSpongebobsDoor)
-            {
-                isAtPOI = true;
-                getWorld().addObject(new SomethingsUp(), 733, 440);
-                if (Greenfoot.isKeyDown("space"))
+            if (!isAtPOI) {
+                if (inFrontOfSquidwardsDoor) 
                 {
-                    
+                    isAtPOI = true;
+                    getWorld().addObject(new SomethingsUp(), 472, 440);
+                } 
+                else if (inFrontOfPatricksDoor) 
+                {
+                    isAtPOI = true;
+                    getWorld().addObject(new SomethingsUp(), 220, 440);
+                } 
+                else if (inFrontOfSpongebobsDoor) 
+                {
+                    isAtPOI = true;
+                    getWorld().addObject(new SomethingsUp(), 733, 440);
+
+                    if (Greenfoot.isKeyDown("space") && !isTextActive) 
+                    {
+                        getWorld().addObject(new Squidward(), x, height);
+                    }
                 }
+            } else if (!inFrontOfSquidwardsDoor && !inFrontOfPatricksDoor && !inFrontOfSpongebobsDoor) 
+            {
+                isAtPOI = false;
             }
-        }
-        else if (!inFrontOfSquidwardsDoor && !inFrontOfPatricksDoor && !inFrontOfSpongebobsDoor)
-        {
-            isAtPOI = false;
         }
     }
 
     private void checkMovement()
     {
-        // movement in 3D space
-        if (Greenfoot.isKeyDown("d") || Greenfoot.isKeyDown("right")) 
-        {
-            setLocation(getX() + 2, getY());
-        }
+        if (!isTextActive) {
+            // movement in 3D space
+            if (Greenfoot.isKeyDown("d") || Greenfoot.isKeyDown("right")) {
+                setLocation(getX() + 2, getY());
+            }
 
-        if (Greenfoot.isKeyDown("a") || Greenfoot.isKeyDown("left")) 
-        {
-            setLocation(getX() - 2, getY());
-        }
+            if (Greenfoot.isKeyDown("a") || Greenfoot.isKeyDown("left")) {
+                setLocation(getX() - 2, getY());
+            }
 
-        if ((Greenfoot.isKeyDown("w") || Greenfoot.isKeyDown("up"))
-            && (getImage().getWidth() >= minWidth || getImage().getHeight() >= minHeight)) 
-        {
-            setLocation(getX(), getY() - 10);
-            getImage().scale(
-                (int) Math.round(getImage().getWidth() / 1.1),
-                (int) Math.round(getImage().getHeight() / 1.1)
-            );
-        }
+            if ((Greenfoot.isKeyDown("w") || Greenfoot.isKeyDown("up"))
+                    && (getImage().getWidth() >= minWidth || getImage().getHeight() >= minHeight)) {
+                setLocation(getX(), getY() - 10);
+                getImage().scale(
+                        (int) Math.round(getImage().getWidth() / 1.1),
+                        (int) Math.round(getImage().getHeight() / 1.1));
+            }
 
-        if ((Greenfoot.isKeyDown("s") || Greenfoot.isKeyDown("down"))
-            && (getImage().getWidth() <= maxWidth || getImage().getHeight() <= maxHeight)) 
-        {
-            setLocation(getX(), getY() + 10);
-            getImage().scale(
-                    (int) Math.round(getImage().getWidth() * 1.1),
-                    (int) Math.round(getImage().getHeight() * 1.1));
+            if ((Greenfoot.isKeyDown("s") || Greenfoot.isKeyDown("down"))
+                    && (getImage().getWidth() <= maxWidth || getImage().getHeight() <= maxHeight)) {
+                setLocation(getX(), getY() + 10);
+                getImage().scale(
+                        (int) Math.round(getImage().getWidth() * 1.1),
+                        (int) Math.round(getImage().getHeight() * 1.1));
+            }
         }
-
+    }
+    
+    private void textCountDown()
+    {
+        if (textActiveTimer > 0)
+        {
+            textActiveTimer--;
+        } 
+        else 
+        {
+            isTextActive = false;
+        }
     }
 }

@@ -20,6 +20,10 @@ public class SomethingsUp extends Assets
         PlatformerSpongebobOutside spongebob = (PlatformerSpongebobOutside) getWorld().getObjects(PlatformerSpongebobOutside.class).get(0);
         if (!spongebob.isAtPOI) {
             beGone();
+        } 
+        else if (spongebob.isTextActive)
+        {
+            beGone();
         }
     }
     

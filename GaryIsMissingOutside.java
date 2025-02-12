@@ -20,5 +20,6 @@ public class GaryIsMissingOutside extends Minigames
         scorePlatformer = jellyfish;
         addObject(new PlatformerSpongebobOutside(), 731, 541);
         addObject(new Text(0, 1), 1, 1);
+        showText("Press space on '?' to interact", getWidth() / 2, 10);
     }
 }
