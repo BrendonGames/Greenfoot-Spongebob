@@ -61,17 +61,17 @@ public class Text extends Actor
                             break;
 
                         case 3:
-                            text = "WHAT DO YOU WANT\nSPONGEBOB!?\nGO AWAY!";
+                            text = "WHAT DO YOU WANT\nSPONGEBOB!?\nGO AWAY!\n(Gained 10 jellyfish for annoying Squidward)";
                             locationX = 472;
-                            locationY = 400;
+                            locationY = 350;
                             appearTime = 150;
                             break;
 
                         case 4:
-                            text = "Maybe Gary's over here!?\nPatrick's not home, it'll be fine if I go in";
+                            text = "Maybe Gary's over here!?\nPatrick's not home, it'll probably be fine to go in";
                             locationX = 220;
                             locationY = 469;
-                            appearTime = 150;
+                            appearTime = 175;
                             break;
 
                         case 5:

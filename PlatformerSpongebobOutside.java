@@ -8,18 +8,26 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class PlatformerSpongebobOutside extends Player
 {
+    // Image sizes
     private int minWidth;
     private int minHeight;
     private int maxWidth;
     private int maxHeight;
+
+    // Location
     public boolean isAtPOI;
-    public boolean isTextActive;
-    private int textActiveTimer;
+    
+    // Tried locations
     private boolean spawnedSquidward;
     private boolean triedHome;
-    private int nextLevelCountdown;
+
+    // Text
+    public boolean isTextActive;
     private boolean jellyfishInUI;
-    // Settings for loading next minigame
+    private int textActiveTimer;
+    
+    // Loading next minigame
+    private int nextLevelCountdown;
     private int langId;
     private int jellyfish;
 
@@ -28,28 +36,31 @@ public class PlatformerSpongebobOutside extends Player
     {
         getImage().scale(getImage().getWidth() / 5, getImage().getHeight() / 5);
 
-        isTextActive = true;
-        textActiveTimer = 125;
-
         spawnedSquidward = false;
         triedHome = false;
-        jellyfishInUI = false;
         
         minWidth = getImage().getWidth();
         minHeight = getImage().getHeight();
         maxWidth = (int) Math.round(getImage().getWidth() * 1.5);
         maxHeight = (int) Math.round(getImage().getHeight() * 1.5);
-
+        
+        // Default vars
+        isTextActive = true;
+        textActiveTimer = 125;
+        jellyfishInUI = false;
+        
+        nextLevelCountdown = -1;
         langId = languageId;
         jellyfish = totalJellyfish;
     }
 
     public void act()
     {
-        countDown();
+        countDowns();
         checkMovement();
         checkLocation();
 
+        // Jellyfish counter
         jellyfishCountLocation();
         if (!jellyfishInUI)
         {
@@ -83,8 +94,9 @@ public class PlatformerSpongebobOutside extends Player
                     // Makes Squidward appear and tells Spongebob to go away
                     getWorld().addObject(new Squidward(), 522, 510);
                     getWorld().addObject(new Text(langId, 3), 0, 0);
-                    textActiveTimer = 150;
+                    textActiveTimer = 175;
                     spawnedSquidward = true;
+                    jellyfish = jellyfish + 10;
                 }
 
             } else if (inFrontOfPatricksDoor) {
@@ -95,7 +107,7 @@ public class PlatformerSpongebobOutside extends Player
                 // Pressed space in front of Patrick's door
                 if (Greenfoot.isKeyDown("space") && !isTextActive) 
                 {
-                    nextLevelCountdown = 500;
+                    nextLevelCountdown = 1;
                 }
             } else if (inFrontOfSpongebobsDoor && !triedHome)
             {
@@ -151,7 +163,7 @@ public class PlatformerSpongebobOutside extends Player
         }
     }
     
-    private void countDown()
+    private void countDowns()
     {
         if (textActiveTimer > 0)
         {
@@ -161,13 +173,17 @@ public class PlatformerSpongebobOutside extends Player
         {
             isTextActive = false;
         }
-
         if (nextLevelCountdown == 0)
         {
-            new GaryIsMissing();
-        }
+            Greenfoot.setWorld(new GaryIsMissing(langId, jellyfish));
+        } 
+        else
+        {
+            nextLevelCountdown--;
+        } 
     }
     
+    // Sets the counter location besides the jellyfish
     private void jellyfishCountLocation()
     {
         if (jellyfish < 10)
