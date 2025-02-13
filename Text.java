@@ -70,8 +70,8 @@ public class Text extends Actor
                         case 4:
                             text = "Maybe Gary's over here!?\nPatrick's not home, it'll probably be fine to go in";
                             locationX = 220;
-                            locationY = 469;
-                            appearTime = 175;
+                            locationY = 450;
+                            appearTime = 200;
                             break;
 
                         case 5:

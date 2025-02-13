@@ -17,9 +17,10 @@ public class PlatformerSpongebobOutside extends Player
     // Location
     public boolean isAtPOI;
     
-    // Tried locations
+    // Interacted locations
     private boolean spawnedSquidward;
     private boolean triedHome;
+    private boolean gotToPatrick;
 
     // Text
     public boolean isTextActive;
@@ -38,6 +39,7 @@ public class PlatformerSpongebobOutside extends Player
 
         spawnedSquidward = false;
         triedHome = false;
+        gotToPatrick = false;
         
         minWidth = getImage().getWidth();
         minHeight = getImage().getHeight();
@@ -91,7 +93,7 @@ public class PlatformerSpongebobOutside extends Player
                 // Pressed space in front of Squidward's door
                 if (Greenfoot.isKeyDown("space") && !isTextActive) 
                 {
-                    // Makes Squidward appear and tells Spongebob to go away
+                    // Makes Squidward appear and tells Spongebob to go away and you gain 10 jellyfish
                     getWorld().addObject(new Squidward(), 522, 510);
                     getWorld().addObject(new Text(langId, 3), 0, 0);
                     textActiveTimer = 175;
@@ -99,7 +101,7 @@ public class PlatformerSpongebobOutside extends Player
                     jellyfish = jellyfish + 10;
                 }
 
-            } else if (inFrontOfPatricksDoor) {
+            } else if (inFrontOfPatricksDoor && !gotToPatrick) {
                 if (!isAtPOI) {
                     getWorld().addObject(new SomethingsUp(), 220, 440);
                     isAtPOI = true;
@@ -107,7 +109,9 @@ public class PlatformerSpongebobOutside extends Player
                 // Pressed space in front of Patrick's door
                 if (Greenfoot.isKeyDown("space") && !isTextActive) 
                 {
-                    nextLevelCountdown = 1;
+                    getWorld().addObject(new Text(langId, 4), 1, 1);
+                    textActiveTimer = 200;
+                    nextLevelCountdown = 200;
                 }
             } else if (inFrontOfSpongebobsDoor && !triedHome)
             {
