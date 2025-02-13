@@ -8,19 +8,15 @@
  */
 public class GaryIsMissingOutside extends Minigames
 {
-    //the score veriable
-    private int scorePlatformer;
-    public int langId;
     /**
      * Constructor for objects of class GaryIsMissing.
      * 
      */
-    public GaryIsMissingOutside(int jellyfish, int languageId /* other vars settings; secrets */)
+    public GaryIsMissingOutside(int jellyfish, int langId /* other vars settings; secrets */)
     {
         super(1000, 761, 1);
-        scorePlatformer = jellyfish;
-        langId = languageId;
-        addObject(new PlatformerSpongebobOutside(langId), 731, 541);
+        // most actions happen within Spongebob, thus he gets all the settings and variables to also bring to the next stage.
+        addObject(new PlatformerSpongebobOutside(langId, jellyfish), 731, 541);
         addObject(new Text(langId, 1), 1, 1);
         addObject(new Text(langId, 5), 1, 1);
     }

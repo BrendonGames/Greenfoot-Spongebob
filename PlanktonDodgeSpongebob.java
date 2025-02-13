@@ -23,11 +23,11 @@ public class PlanktonDodgeSpongebob extends Player
      */
     public void checkForJellyfish()
     {
-        if(isTouching(jellyfish.class))
+        if(isTouching(Jellyfish.class))
         {
             PlanktonDodge planktonDodge = (PlanktonDodge)getWorld();
             planktonDodge.addScore();
-            removeTouching(jellyfish.class);
+            removeTouching(Jellyfish.class);
         }
     }
 }

@@ -16,9 +16,15 @@ public class PlatformerSpongebobOutside extends Player
     public boolean isTextActive;
     private int textActiveTimer;
     private boolean spawnedSquidward;
+    private boolean triedHome;
+    private int nextLevelCountdown;
+    private boolean jellyfishInUI;
+    // Settings for loading next minigame
     private int langId;
+    private int jellyfish;
 
-    public PlatformerSpongebobOutside(int languageId)
+
+    public PlatformerSpongebobOutside(int languageId, int totalJellyfish)
     {
         getImage().scale(getImage().getWidth() / 5, getImage().getHeight() / 5);
 
@@ -26,6 +32,8 @@ public class PlatformerSpongebobOutside extends Player
         textActiveTimer = 125;
 
         spawnedSquidward = false;
+        triedHome = false;
+        jellyfishInUI = false;
         
         minWidth = getImage().getWidth();
         minHeight = getImage().getHeight();
@@ -33,13 +41,22 @@ public class PlatformerSpongebobOutside extends Player
         maxHeight = (int) Math.round(getImage().getHeight() * 1.5);
 
         langId = languageId;
+        jellyfish = totalJellyfish;
     }
 
     public void act()
     {
-        textCountDown();
+        countDown();
         checkMovement();
         checkLocation();
+
+        jellyfishCountLocation();
+        if (!jellyfishInUI)
+        {
+            getWorld().addObject(new JellyfishAmount(), 20, 20);
+            jellyfishInUI = true;
+        }
+
     }
     
     private void checkLocation()
@@ -78,9 +95,9 @@ public class PlatformerSpongebobOutside extends Player
                 // Pressed space in front of Patrick's door
                 if (Greenfoot.isKeyDown("space") && !isTextActive) 
                 {
-
+                    nextLevelCountdown = 500;
                 }
-            } else if (inFrontOfSpongebobsDoor)
+            } else if (inFrontOfSpongebobsDoor && !triedHome)
             {
                 if (!isAtPOI)
                 {
@@ -90,7 +107,9 @@ public class PlatformerSpongebobOutside extends Player
                 // Pressed space in front of Spongebob's door
                 if (Greenfoot.isKeyDown("space") && !isTextActive)
                 {
-
+                    getWorld().addObject(new Text(langId, 2), 1, 1);
+                    textActiveTimer = 100;
+                    triedHome = true;
                 }
             }
             else 
@@ -132,16 +151,60 @@ public class PlatformerSpongebobOutside extends Player
         }
     }
     
-    private void textCountDown()
+    private void countDown()
     {
         if (textActiveTimer > 0)
         {
             isTextActive = true;
             textActiveTimer--;
-        } 
-        else 
+        } else
         {
             isTextActive = false;
+        }
+
+        if (nextLevelCountdown == 0)
+        {
+            new GaryIsMissing();
+        }
+    }
+    
+    private void jellyfishCountLocation()
+    {
+        if (jellyfish < 10)
+        {
+            getWorld().showText(": " + jellyfish, 55, 20);
+            getWorld().showText("" , 60, 20);
+            getWorld().showText("" , 65, 20);
+            getWorld().showText("" , 70, 20);
+        }
+        else if (jellyfish < 100)
+        {
+            getWorld().showText("" , 55, 20);
+            getWorld().showText(": " + jellyfish, 60, 20);
+            getWorld().showText("" , 65, 20);
+            getWorld().showText("" , 70, 20);
+        }
+        else if (jellyfish < 1000)
+        {
+            getWorld().showText("" , 55, 20);
+            getWorld().showText("" , 60, 20);
+            getWorld().showText(": " + jellyfish, 65, 20);
+            getWorld().showText("" , 70, 20);
+        } 
+        else if (jellyfish < 10000)
+        {
+            getWorld().showText("" , 55, 20);
+            getWorld().showText("" , 60, 20);
+            getWorld().showText("" , 65, 20);
+            getWorld().showText(": " + jellyfish, 70, 20);
+        } 
+        else
+        {
+            getWorld().showText("" , 55, 20);
+            getWorld().showText("" , 60, 20);
+            getWorld().showText("" , 65, 20);
+            getWorld().showText("", 70, 20);
+            getWorld().showText(": 9999+", 75, 20);
         }
     }
 }

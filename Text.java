@@ -38,7 +38,8 @@ public class Text extends Actor
                 case 0:
 
                     // look for which text is selected
-                    switch (textId) {
+                    switch (textId)
+                    {
                         case 0:
                             text = "Hello, am debug text";
                             locationX = getWorld().getWidth() / 2;
