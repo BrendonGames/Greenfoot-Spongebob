@@ -1,7 +1,7 @@
 // import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class jellyfish here.
+ * Jellyfish's are the coins you can collect
  * 
  * @author (your name) 
  * @version (a version number or a date)
