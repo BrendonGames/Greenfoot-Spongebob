@@ -17,7 +17,7 @@ public class PlanktonDodge extends Minigames
      */
     public PlanktonDodge(int jellyfish)
     {
-        super(1000, 1000, 1);
+        super(512, 320, 1);
         scorePlankton = jellyfish;
     }
     
