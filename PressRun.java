@@ -17,6 +17,6 @@ public class PressRun extends Menus
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
-        Greenfoot.setWorld(new MainMenu(50, 50, true, 0));
+        Greenfoot.setWorld(new MainMenu(50, 50, false, 0));
     }
 }

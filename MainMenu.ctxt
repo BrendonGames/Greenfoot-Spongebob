@@ -1,9 +1,7 @@
 #BlueJ class context
 comment0.target=MainMenu
-comment1.params=
-comment1.target=MainMenu()
+comment1.params=volumeSet\ gameSpeedSet\ musicSet\ languageId
+comment1.target=MainMenu(int,\ int,\ boolean,\ int)
 comment2.params=
 comment2.target=void\ prepare()
-comment3.params=
-comment3.target=void\ stopped()
-numComments=4
+numComments=3

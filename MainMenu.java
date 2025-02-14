@@ -6,7 +6,7 @@ public class MainMenu extends Menus
     int gameSpeed;
     boolean music;
     int langId;
-    private GreenfootSound menuMusic;
+    public static GreenfootSound menuMusic = new GreenfootSound("new_menu_music.wav"); // Shared music object
 
     public MainMenu(int volumeSet, int gameSpeedSet, boolean musicSet, int languageId) {    
         super(800, 600, 1);
@@ -16,8 +16,11 @@ public class MainMenu extends Menus
         music = musicSet;
         langId = languageId;
         prepare();
-        menuMusic = new GreenfootSound("menu_music.wav"); // Load the music
-        menuMusic.playLoop(); // Play it in a loop
+        // Only start music if it's not already playing
+        if (!menuMusic.isPlaying() && !musicSet) {
+            menuMusic.playLoop();
+            musicSet = true;
+        }
     }
 
     private void prepare() {
@@ -29,6 +32,6 @@ public class MainMenu extends Menus
     }
 
     public void stopped() {
-        menuMusic.stop(); // Stop the music when leaving the menu
+        // menuMusic.stop(); // Stop the music when leaving the menu
     }
 }

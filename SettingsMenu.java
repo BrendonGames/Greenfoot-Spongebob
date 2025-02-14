@@ -14,8 +14,6 @@ public class SettingsMenu extends World {
         music = musicSet;
         langId = languageId;
         prepare();
-        backgroundMusic = new GreenfootSound("menu_music.wav");
-        backgroundMusic.playLoop();
     }
 
     private void prepare() {
