@@ -15,9 +15,9 @@ public class GaryIsMissing extends Minigames
      */
     public GaryIsMissing(int languageId, int totalJellyfish)
     {
-        super(710, 540, 1);
-        getBackground().scale(getBackground().getWidth() / 2, getBackground().getHeight() / 2);
-        addObject(new PlatformerSpongebob(), 1, 1);
+        super(947, 720, 1);
+        getBackground().scale((int)Math.round(getBackground().getWidth() / 1.5), (int)Math.round(getBackground().getHeight() / 1.5));
+        addObject(new PlatformerSpongebob(), 888, 638);
         showText("Jellyfish: " + totalJellyfish, 60, 20);
     }
 }
