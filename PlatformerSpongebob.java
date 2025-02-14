@@ -8,12 +8,23 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class PlatformerSpongebob extends Player
 {
-    /**
-     * Act - do whatever the PlatformerSpongebob wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    // Text
+    public boolean isTextActive;
+    private boolean jellyfishInUI;
+    private int textActiveTimer;
+
+    // Loading next minigame
+    private int nextLevelCountdown;
+    private int langId;
+    private int jellyfish;
+
+    public PlatformerSpongebob()
+    {
+        
+    }
+
     public void act()
     {
-        // Add your action code here.
+        
     }
 }
