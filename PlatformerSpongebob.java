@@ -15,6 +15,7 @@ public class PlatformerSpongebob extends Player
     private int minHeight;
     private boolean isJumping;
     private boolean touchingPlatform;
+    private boolean touchedGary;
 
     // Text
     public boolean isTextActive;
@@ -33,18 +34,26 @@ public class PlatformerSpongebob extends Player
         // Set jumping settings
         deltaY = 0;
         gravity = 1;
-        jumpMomentum = 20;
+        jumpMomentum = 18;
 
         minHeight = 638;
+        textActiveTimer = 150;
+        touchedGary = false;
 
+        nextLevelCountdown = -1;
         jellyfish = totalJellyfish;
         langId = languageId;
+
     }
 
     public void act()
     {
+        countDowns();
         checkLocation();
-        checkMovement();
+        if (!isTextActive)
+        {
+            checkMovement();
+        }
         calculateDelta();
 
         // Jellyfish counter
@@ -75,6 +84,13 @@ public class PlatformerSpongebob extends Player
         else
         {
             touchingPlatform = false;
+        }
+
+        if (isTouching(Gary.class) && !touchedGary)
+        {
+            getWorld().addObject(new Text(langId, 8), 0, 0);
+            nextLevelCountdown = 200;
+            touchedGary = true;
         }
     }
     
@@ -147,5 +163,26 @@ public class PlatformerSpongebob extends Player
             getWorld().showText("", 70, 20);
             getWorld().showText(": 9999+", 75, 20);
         }
+    }
+
+    private void countDowns()
+    {
+        if (textActiveTimer > 0)
+        {
+            isTextActive = true;
+            textActiveTimer--;
+        } else
+        {
+            isTextActive = false;
+        }
+
+        if (nextLevelCountdown == 0)
+        {
+            Greenfoot.setWorld(new PlanktonDodge(langId, jellyfish));
+        } 
+        else
+        {
+            nextLevelCountdown--;
+        } 
     }
 }

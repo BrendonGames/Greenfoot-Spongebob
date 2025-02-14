@@ -18,8 +18,15 @@ public class GaryIsMissing extends Minigames
         getBackground().scale((int)Math.round(getBackground().getWidth() / 1.5), (int)Math.round(getBackground().getHeight() / 1.5));
         addObject(new PlatformerSpongebob(languageId, totalJellyfish), 888, 638);
         addObject(new Text(languageId, 6), 1, 1);
+        addObject(new Text(languageId, 7), 1, 1);
 
         // add platforms
         addObject(new Platform(), 496, 573);
+        addObject(new Platform(), 764, 408);
+        addObject(new Platform(), 764, 255);
+        addObject(new Platform(), 336, 191);
+        addObject(new Platform(), 95, 404);
+
+        addObject(new Gary(), 100, 359);
     }
 }

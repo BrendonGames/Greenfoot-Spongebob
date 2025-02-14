@@ -16,7 +16,7 @@ public class PlanktonDodge extends Minigames
      * Constructor for objects of class PlanktonDodge.
      * 
      */
-    public PlanktonDodge(int jellyfish)
+    public PlanktonDodge(int languageId, int jellyfish)
     {
         super(1000, 400, 1);
         scorePlankton = jellyfish;
@@ -29,9 +29,11 @@ public class PlanktonDodge extends Minigames
     {
         objects();
         timer--;
-            if (timer == 0)
+        showText("Time: " + timer, getWidth() / 2, 10);
+        if (timer == 0)
         {
             // thanks for playing the demo
+            showText("Thank you for playing our demo\nDue to time constraints this was the best we could do to our ability", getWidth() / 2, getHeight() / 2);
             Greenfoot.stop();
         } 
     }

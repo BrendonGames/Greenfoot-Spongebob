@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.target=BackButton
-comment1.params=
-comment1.target=BackButton()
+comment1.params=volumeSet\ gameSpeedSet\ musicSet\ languageId
+comment1.target=BackButton(int,\ int,\ boolean,\ int)
 comment2.params=
 comment2.target=void\ act()
 numComments=3

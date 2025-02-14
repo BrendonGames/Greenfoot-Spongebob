@@ -1,5 +1,5 @@
 #BlueJ class context
 comment0.target=LanguageSettings
-comment1.params=
-comment1.target=LanguageSettings()
+comment1.params=volumeSet\ gameSpeedSet\ musicSet\ languageId
+comment1.target=LanguageSettings(int,\ int,\ boolean,\ int)
 numComments=2

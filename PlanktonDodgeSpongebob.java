@@ -11,7 +11,7 @@ public class PlanktonDodgeSpongebob extends Player
     private int Jellyfish;
     private boolean JellyfishInUI;
     
-        // Vars
+    // Vars
     private int deltaY;
     private int gravity;
     private int jumpMomentum;
@@ -41,6 +41,7 @@ public class PlanktonDodgeSpongebob extends Player
         calculateDelta();
         checkLocation();
         touching();
+        getWorld().showText("HP: " + HP, getWorld().getWidth() - 40, 10);
     }
     
     public void move()
@@ -88,7 +89,7 @@ public class PlanktonDodgeSpongebob extends Player
         HP = 100;
     }
     
-       private void calculateDelta()
+    private void calculateDelta()
     {
         if (isJumping)
         {
@@ -156,7 +157,7 @@ public class PlanktonDodgeSpongebob extends Player
             HP -= 5;
             removeTouching(ChumBucketHat.class);
         }
-             
+        
         if (isTouching(CrappyPatty.class))
         {
             HP -= 5;
@@ -165,6 +166,7 @@ public class PlanktonDodgeSpongebob extends Player
         
         if (HP == 0)
         {
+            getWorld().showText("You lost", getWorld().getWidth() / 2, getWorld().getHeight() / 2);
             Greenfoot.stop();
         }
     }

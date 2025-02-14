@@ -8,12 +8,17 @@
  */
 public class ChumBucketHat extends Assets
 {
-    /**
-     * Act - do whatever the ChumBucketHat wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    public ChumBucketHat()
+    {
+        getImage().scale(getImage().getWidth() / 5, getImage().getHeight() / 5);
+    }
+    
     public void act()
     {
-        // Add your action code here.
+        setLocation(getX() - 10, getY());
+        if (getX() == 0)
+        {
+            getWorld().removeObject(this);
+        }
     }
 }

@@ -1,19 +1,15 @@
 // import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Gary here.
+ * Write a description of class Garry here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
 public class Gary extends Characters
 {
-    /**
-     * Act - do whatever the Gary wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act()
+    public Gary()
     {
-        // Add your action code here.
+        getImage().scale(getImage().getWidth() / 5, getImage().getHeight() / 5);
     }
 }

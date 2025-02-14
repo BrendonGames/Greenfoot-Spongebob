@@ -90,9 +90,17 @@ public class Text extends Actor
 
                         case 7:
                             text = "GARY, THERE YOU ARE!";
-                            locationX = 888;
-                            locationY = 608;
+                            locationX = 800;
+                            locationY = 550;
+                            appearTime = 150;
+                            break;
 
+                        case 8:
+                            text = "Gary: Meow!\nSpongebob: I'm so glad I found you,\nnow I need to go to work";
+                            locationX = 175;
+                            locationY = 220;
+                            appearTime = 200;
+                            break;
 
                         // Shows which textId is selected, should only appear when textId doesn't exist
                         default:

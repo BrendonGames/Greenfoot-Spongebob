@@ -8,12 +8,17 @@
  */
 public class CrappyPatty extends Assets
 {
-    /**
-     * Act - do whatever the CrappyPatty wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    public CrappyPatty()
+    {
+        getImage().scale(getImage().getWidth() / 6, getImage().getHeight() / 6);
+    }
+    
     public void act()
     {
-        // Add your action code here.
+        setLocation(getX() - 10, getY());
+        if (getX() == 0)
+        {
+            getWorld().removeObject(this);
+        }
     }
 }
