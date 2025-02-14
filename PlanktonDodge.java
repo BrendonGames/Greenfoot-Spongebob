@@ -3,7 +3,7 @@
 /**
  * Write a description of class PlanktonDodge here.
  * 
- * @Laynah  
+ * @Laynah  @Quillan
  * @05-02-25 
  */
 public class PlanktonDodge extends Minigames
@@ -17,8 +17,10 @@ public class PlanktonDodge extends Minigames
      */
     public PlanktonDodge(int jellyfish)
     {
-        super(512, 320, 1);
+        super(1000, 400, 1);
         scorePlankton = jellyfish;
+        gettingReady();
+        addScore();
     }
     
     /**
@@ -28,6 +30,15 @@ public class PlanktonDodge extends Minigames
     {
             scorePlankton = scorePlankton + 1;
             showText("Jellyfish's: " + scorePlankton, 80, 25);
+    }
+    
+    /**
+     * preparing the playable character
+     */
+    private void gettingReady()
+    {
+        PlanktonDodgeSpongebob planktondodgespongebob = new PlanktonDodgeSpongebob();
+        addObject(planktondodgespongebob, 100, 200); 
     }
     }
 

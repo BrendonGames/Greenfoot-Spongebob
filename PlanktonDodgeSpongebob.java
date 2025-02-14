@@ -3,11 +3,11 @@
 /**
  * Write a description of class PlanktonDodgeSpongebob here.
  * 
- * @Laynah (your name) 
- * @05-02-25 (a version number or a date)
+ * @Laynah @Quillan
+ * @14-02-25 (a version number or a date)
  */
 public class PlanktonDodgeSpongebob extends Player
-{
+{    
     private int Jellyfish;
     private boolean JellyfishInUI;
     

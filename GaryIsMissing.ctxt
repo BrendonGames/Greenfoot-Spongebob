@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.target=GaryIsMissing
 comment0.text=\r\n\ You're\ inside\ Patrick's\ house\ now.\ Jump\ the\ platforms\ to\ save\ Gary\r\n\ \r\n\ @Brendon\r\n\ @13/02/2025\r\n
-comment1.params=
-comment1.target=GaryIsMissing()
+comment1.params=languageId\ totalJellyfish
+comment1.target=GaryIsMissing(int,\ int)
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ GaryIsMissing.\r\n\ \r\n
 numComments=2
