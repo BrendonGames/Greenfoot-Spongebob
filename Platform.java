@@ -8,8 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Platform extends Assets
 {
-    public Platform(int scaleX, int scaleY)
+    public Platform()
     {
-        getImage().scale(scaleX, scaleY);
+        getImage().scale(250, 25);
     }
 }

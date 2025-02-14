@@ -20,6 +20,6 @@ public class GaryIsMissing extends Minigames
         addObject(new Text(languageId, 6), 1, 1);
 
         // add platforms
-        
+        addObject(new Platform(), 496, 573);
     }
 }

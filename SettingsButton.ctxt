@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.target=SettingsButton
-comment1.params=text\ type
-comment1.target=SettingsButton(java.lang.String,\ int)
+comment1.params=text\ type\ volumeSet\ gameSpeedSet\ musicSet\ languageId
+comment1.target=SettingsButton(java.lang.String,\ int,\ int,\ int,\ boolean,\ int)
 comment2.params=
 comment2.target=void\ act()
 comment3.params=
