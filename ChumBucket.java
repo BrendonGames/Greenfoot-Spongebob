@@ -16,9 +16,4 @@ public class ChumBucket extends Assets
     {
         // Add your action code here.
     }
-    
-    public ChumBucket()
-    {
-     getImage().scale(getImage().getWidth() /6, getImage().getHeight() /6);   
-    }
 }

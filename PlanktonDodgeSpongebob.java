@@ -1,4 +1,4 @@
-// import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Write a description of class PlanktonDodgeSpongebob here.
@@ -27,6 +27,18 @@ public class PlanktonDodgeSpongebob extends Player
             getWorld().addObject(new JellyfishAmount(), 20, 20);
             JellyfishInUI = true;
         }
+        move();
+    }
+    
+    public void move()
+    {
+        if (Greenfoot.isKeyDown("w") || Greenfoot.isKeyDown("up")) {
+                setLocation(getX(), getY() - 2);
+            }
+
+            if (Greenfoot.isKeyDown("s") || Greenfoot.isKeyDown("down")) {
+                setLocation(getX(), getY() + 2);
+            }
     }
     
     /**
@@ -40,6 +52,11 @@ public class PlanktonDodgeSpongebob extends Player
             planktonDodge.addScore();
             removeTouching(Jellyfish.class);
         }
+    }
+    
+    public PlanktonDodgeSpongebob()
+    {
+        getImage().scale(getImage().getWidth() / 2, getImage().getHeight() / 2);
     }
     
     private void JellyfishCountLocation()

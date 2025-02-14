@@ -16,9 +16,4 @@ public class CrappyPatty extends Assets
     {
         // Add your action code here.
     }
-    
-    public CrappyPatty()
-    {
-     getImage().scale(getImage().getWidth() /8, getImage().getHeight() /8);   
-    }
 }

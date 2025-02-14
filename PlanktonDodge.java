@@ -29,7 +29,6 @@ public class PlanktonDodge extends Minigames
     public void addScore()
     {
             scorePlankton = scorePlankton + 1;
-            showText("Jellyfish's: " + scorePlankton, 80, 25);
     }
     
     /**
