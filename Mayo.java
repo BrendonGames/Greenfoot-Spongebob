@@ -1,4 +1,4 @@
-// import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Write a description of class Mayo here.
@@ -15,5 +15,10 @@ public class Mayo extends Assets
     public void act()
     {
         // Add your action code here.
+    }
+    
+    public Mayo()
+    {
+     getImage().scale(getImage().getWidth() /8, getImage().getHeight() /8);   
     }
 }
