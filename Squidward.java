@@ -15,6 +15,6 @@ public class Squidward extends Characters
     
     public void act()
     {
-        getWorld().setPaintOrder(PlatformerSpongebobOutside.class);
+        getWorld().setPaintOrder(PanickedSpongebobOutside.class);
     }
 }

@@ -16,7 +16,7 @@ public class GaryIsMissingOutside extends Minigames
     {
         super(1000, 761, 1);
         // most actions happen within Spongebob, thus he gets all the settings and variables to also bring to the next stage.
-        addObject(new PlatformerSpongebobOutside(langId, jellyfish), 731, 541);
+        addObject(new PanickedSpongebobOutside(langId, jellyfish), 731, 541);
         addObject(new Text(langId, 1), 1, 1);
         addObject(new Text(langId, 5), 1, 1);
     }

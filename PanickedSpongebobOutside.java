@@ -1,12 +1,14 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class PlatformerSpongebob here.
+ * Spongebob ran out of his house to try and find Gary. This Spongebob can move left, right, 
+ * forwards and backwards. This is the most important actor within the GaryIsMissing portion.
+ * This actor handles almost everything within this minigame.
  * 
  * @Brendon
  * @29/01/2025
  */
-public class PlatformerSpongebobOutside extends Player
+public class PanickedSpongebobOutside extends Player
 {
     // Image sizes
     private int minWidth;
@@ -17,7 +19,7 @@ public class PlatformerSpongebobOutside extends Player
     // Location
     public boolean isAtPOI;
     
-    // Interacted locations
+    // Interacted with locations
     private boolean spawnedSquidward;
     private boolean triedHome;
     private boolean gotToPatrick;
@@ -33,7 +35,7 @@ public class PlatformerSpongebobOutside extends Player
     private int jellyfish;
 
 
-    public PlatformerSpongebobOutside(int languageId, int totalJellyfish)
+    public PanickedSpongebobOutside(int languageId, int totalJellyfish)
     {
         getImage().scale(getImage().getWidth() / 5, getImage().getHeight() / 5);
 

@@ -17,7 +17,7 @@ public class SomethingsUp extends Assets
     public void act()
     {
         // Checks if PlatformferSpongebobOutside is at a point of interest (something to interact with)
-        PlatformerSpongebobOutside spongebob = (PlatformerSpongebobOutside) getWorld().getObjects(PlatformerSpongebobOutside.class).get(0);
+        PanickedSpongebobOutside spongebob = (PanickedSpongebobOutside) getWorld().getObjects(PanickedSpongebobOutside.class).get(0);
         if (!spongebob.isAtPOI || spongebob.isTextActive) {
             beGone();
         }
