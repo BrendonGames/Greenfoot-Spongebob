@@ -25,7 +25,7 @@ public class PlatformerSpongebob extends Player
     private int langId;
     private int jellyfish;
 
-    public PlatformerSpongebob()
+    public PlatformerSpongebob(int languageId, int totalJellyfish)
     {
         getImage().scale(getImage().getWidth() / 4, getImage().getHeight() / 4);
 
@@ -35,6 +35,9 @@ public class PlatformerSpongebob extends Player
         jumpMomentum = 20;
 
         minHeight = 638;
+
+        jellyfish = totalJellyfish;
+        langId = languageId;
     }
 
     public void act()
@@ -42,15 +45,29 @@ public class PlatformerSpongebob extends Player
         checkLocation();
         checkMovement();
         calculateDelta();
+
+        // Jellyfish counter
+        jellyfishCountLocation();
+        if (!jellyfishInUI)
+        {
+            getWorld().addObject(new JellyfishAmount(), 20, 20);
+            jellyfishInUI = true;
+        }
     }
 
     private void checkLocation()
     {
+        // Checks if on the ground or on platform
         if (getY() >= minHeight && deltaY <= 0)
         {
             setLocation(getX(), minHeight);
             deltaY = 0;
             isJumping = false;
+        }
+
+        if (isTouching(Platform.class) && deltaY <= 0)
+        {
+            
         }
     }
     
@@ -79,12 +96,54 @@ public class PlatformerSpongebob extends Player
         }
     }
 
+    // 
     private void calculateDelta()
     {
         if (isJumping)
         {
             setLocation(getX(), getY() - deltaY);
             deltaY -= gravity;
+        }
+    }
+
+    // Sets the counter location besides the jellyfish
+    private void jellyfishCountLocation()
+    {
+        if (jellyfish < 10)
+        {
+            getWorld().showText(": " + jellyfish, 55, 20);
+            getWorld().showText("" , 60, 20);
+            getWorld().showText("" , 65, 20);
+            getWorld().showText("" , 70, 20);
+        }
+        else if (jellyfish < 100)
+        {
+            getWorld().showText("" , 55, 20);
+            getWorld().showText(": " + jellyfish, 60, 20);
+            getWorld().showText("" , 65, 20);
+            getWorld().showText("" , 70, 20);
+        }
+        else if (jellyfish < 1000)
+        {
+            getWorld().showText("" , 55, 20);
+            getWorld().showText("" , 60, 20);
+            getWorld().showText(": " + jellyfish, 65, 20);
+            getWorld().showText("" , 70, 20);
+        } 
+        else if (jellyfish < 10000)
+        {
+            getWorld().showText("" , 55, 20);
+            getWorld().showText("" , 60, 20);
+            getWorld().showText("" , 65, 20);
+            getWorld().showText(": " + jellyfish, 70, 20);
+        } 
+        else
+        {
+            getWorld().showText("" , 55, 20);
+            getWorld().showText("" , 60, 20);
+            getWorld().showText("" , 65, 20);
+            getWorld().showText("", 70, 20);
+            getWorld().showText(": 9999+", 75, 20);
         }
     }
 }

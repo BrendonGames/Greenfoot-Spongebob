@@ -1,7 +1,7 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+// import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class JellyfishAmount here.
+ * Icon of a jellyfish besides a counter
  * 
  * @author (your name) 
  * @version (a version number or a date)

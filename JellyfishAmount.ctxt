@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=JellyfishAmount
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ JellyfishAmount\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Icon\ of\ a\ jellyfish\ besides\ a\ counter\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
 comment1.target=JellyfishAmount()
 numComments=2

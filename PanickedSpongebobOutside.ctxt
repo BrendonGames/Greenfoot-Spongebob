@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=PanickedSpongebobOutside
+comment0.text=\r\n\ Spongebob\ ran\ out\ of\ his\ house\ to\ try\ and\ find\ Gary.\ This\ Spongebob\ can\ move\ left,\ right,\ \r\n\ forwards\ and\ backwards.\ This\ is\ the\ most\ important\ actor\ within\ the\ GaryIsMissing\ portion.\r\n\ This\ actor\ handles\ almost\ everything\ within\ this\ minigame.\r\n\ \r\n\ @Brendon\r\n\ @29/01/2025\r\n
+comment1.params=languageId\ totalJellyfish
+comment1.target=PanickedSpongebobOutside(int,\ int)
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ checkLocation()
+comment4.params=
+comment4.target=void\ checkMovement()
+comment5.params=
+comment5.target=void\ countDowns()
+comment6.params=
+comment6.target=void\ jellyfishCountLocation()
+numComments=7

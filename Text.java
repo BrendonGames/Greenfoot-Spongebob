@@ -81,6 +81,19 @@ public class Text extends Actor
                             appearTime = -1;
                             break;
 
+                        case 6:
+                            text = "Press space to jump";
+                            locationX = getWorld().getWidth() / 2;
+                            locationY = 10;
+                            appearTime = -1;
+                            break;
+
+                        case 7:
+                            text = "GARY, THERE YOU ARE!";
+                            locationX = 888;
+                            locationY = 608;
+
+
                         // Shows which textId is selected, should only appear when textId doesn't exist
                         default:
                             text = "Hellow, wrong textId: " + textId;
