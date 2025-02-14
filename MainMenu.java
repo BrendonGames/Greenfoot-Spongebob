@@ -24,9 +24,9 @@ public class MainMenu extends Menus
     }
 
     private void prepare() {
-        addObject(new MenuButton("Gevonden geheimen", new SecretsWorld()), 400, 200);
+        addObject(new MenuButton("X Gevonden geheimen X", new SettingsWorld(volume, gameSpeed, music, langId)), 400, 200);
         addObject(new MenuButton("Speel spel", new GaryIsMissingOutside(0,0)), 400, 280);
-        addObject(new MenuButton("Vrij spel", new FreePlayWorld()), 400, 360);
+        addObject(new MenuButton("X Vrij spel X", new SettingsWorld(volume, gameSpeed, music, langId)), 400, 360);
         addObject(new MenuButton("Instellingen", new SettingsWorld(volume, gameSpeed, music, langId)), 400, 440);
 
     }
