@@ -8,7 +8,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class GaryIsMissing extends Minigames
 {
+    // Text
+    public boolean isTextActive;
+    private boolean jellyfishInUI;
+    private int textActiveTimer;
 
+    // Loading next minigame
+    private int nextLevelCountdown;
+    private int langId;
+    private int jellyfish;
     /**
      * Constructor for objects of class GaryIsMissing.
      * 
