@@ -3,7 +3,7 @@ import greenfoot.*;
 public class MainMenu extends Menus {
     private GreenfootSound menuMusic;
 
-    public MainMenu() {    
+    public MainMenu(int volume, int gameSpeed, boolean music, int languageId) {    
         super(800, 600, 1);
         prepare();
         menuMusic = new GreenfootSound("menu_music.wav"); // Load the music

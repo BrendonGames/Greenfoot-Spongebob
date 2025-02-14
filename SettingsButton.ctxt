@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=SettingsButton
+comment1.params=text\ type
+comment1.target=SettingsButton(java.lang.String,\ int)
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ handleSetting()
+numComments=4

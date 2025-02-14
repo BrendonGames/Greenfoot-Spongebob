@@ -1,9 +1,18 @@
 import greenfoot.*;
 
-public class MusicVolumeSettings extends World {
-    public MusicVolumeSettings() {
+public class MusicVolumeSettings extends World
+{
+    int volume;
+    int gameSpeed;
+    boolean music;
+    int langId;
+    public MusicVolumeSettings(int volumeSet, int gameSpeedSet, boolean musicSet, int languageId) {
         super(800, 600, 1);
+        volume = volumeSet;
+        gameSpeed = gameSpeedSet;
+        music = musicSet;
+        langId = languageId;
         showText("muziek volume", 400, 300);
-        addObject(new BackButton(), 100, 550);
+        addObject(new BackButton(volume, gameSpeed, music, langId), 100, 550);
     }
 }
