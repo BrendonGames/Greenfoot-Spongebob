@@ -6,3 +6,4 @@ public class SettingsWorld extends Menus {
         showText("Instellingen", 400, 300);
     }
 }
+addObject(new MenuButton("Instellingen", new SettingsMenu()), 400, 440);
