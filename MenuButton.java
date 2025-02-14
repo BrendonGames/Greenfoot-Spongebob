@@ -1,6 +1,6 @@
 import greenfoot.*;
 
-public class MenuButton extends Actor {
+public class MenuButton extends Assets {
     private String text;
     private World targetWorld;
 
