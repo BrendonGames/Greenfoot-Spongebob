@@ -11,6 +11,15 @@ public class PlanktonDodgeSpongebob extends Player
     private int Jellyfish;
     private boolean JellyfishInUI;
     
+        // Vars
+    private int deltaY;
+    private int gravity;
+    private int jumpMomentum;
+    private int minHeight;
+    private boolean isJumping;
+    
+    private int HP;
+
     /**
      * Act - do whatever the PlanktonDodgeSpongebob wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -27,18 +36,30 @@ public class PlanktonDodgeSpongebob extends Player
             getWorld().addObject(new JellyfishAmount(), 20, 20);
             JellyfishInUI = true;
         }
+        
         move();
+        calculateDelta();
+        checkLocation();
+        touching();
     }
     
     public void move()
     {
-        if (Greenfoot.isKeyDown("w") || Greenfoot.isKeyDown("up")) {
-                setLocation(getX(), getY() - 2);
-            }
-
-            if (Greenfoot.isKeyDown("s") || Greenfoot.isKeyDown("down")) {
-                setLocation(getX(), getY() + 2);
-            }
+        if (Greenfoot.isKeyDown("space") && !isJumping)
+        {
+            isJumping = true;
+            deltaY = jumpMomentum;
+        }
+    }
+    
+        private void checkLocation()
+    {
+        if (getY() >= minHeight && deltaY <= 0)
+        {
+            setLocation(getX(), minHeight);
+            deltaY = 0;
+            isJumping = false;
+        }
     }
     
     /**
@@ -57,6 +78,23 @@ public class PlanktonDodgeSpongebob extends Player
     public PlanktonDodgeSpongebob()
     {
         getImage().scale(getImage().getWidth() / 2, getImage().getHeight() / 2);
+        
+        deltaY = 0;
+        gravity = 1;
+        jumpMomentum = 22;
+
+        minHeight = 300;
+        
+        HP = 100;
+    }
+    
+       private void calculateDelta()
+    {
+        if (isJumping)
+        {
+            setLocation(getX(), getY() - deltaY);
+            deltaY -= gravity;
+        }
     }
     
     private void JellyfishCountLocation()
@@ -96,6 +134,38 @@ public class PlanktonDodgeSpongebob extends Player
             getWorld().showText("" , 65, 20);
             getWorld().showText("", 70, 20);
             getWorld().showText(": 9999+", 75, 20);
+        }
+    }
+    
+    public void touching()
+    {
+        if (isTouching(Mayo.class))
+        {
+            HP -= 10;
+            removeTouching(Mayo.class);
+        } 
+        
+        if (isTouching(ChumBucket.class))
+        {
+            HP -= 10;
+            removeTouching(ChumBucket.class);
+        }
+        
+        if (isTouching(ChumBucketHat.class))
+        {
+            HP -= 5;
+            removeTouching(ChumBucketHat.class);
+        }
+             
+        if (isTouching(CrappyPatty.class))
+        {
+            HP -= 5;
+            removeTouching(CrappyPatty.class);
+        }
+        
+        if (HP == 0)
+        {
+            Greenfoot.stop();
         }
     }
 }
