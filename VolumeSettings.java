@@ -1,5 +1,11 @@
 import greenfoot.*;
 
+/*
+ * The world where you can change the volume (unused during demo)
+ * 
+ * @Jesse
+ * @14/02/2025
+ */
 public class VolumeSettings extends World
 {
     int volume;

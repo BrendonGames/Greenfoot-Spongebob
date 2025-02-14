@@ -1,7 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class PlatformerSpongebob here.
+ * The Spongebob that is used in the Gary is missing minigame. This is again the most important actor in 
+ * Gary is missing due to almost everything being here.
  * 
  * @Brendon
  * @14/02/2025
@@ -89,6 +90,7 @@ public class PlatformerSpongebob extends Player
         if (isTouching(Gary.class) && !touchedGary)
         {
             getWorld().addObject(new Text(langId, 8), 0, 0);
+            textActiveTimer = 200;
             nextLevelCountdown = 200;
             touchedGary = true;
         }

@@ -1,10 +1,7 @@
 // import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Krabs here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * unused during demo
  */
 public class Krabs extends Characters
 {

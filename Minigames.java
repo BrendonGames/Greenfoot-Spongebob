@@ -1,10 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Minigames here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Collection
  */
 public class Minigames extends World
 {
@@ -15,7 +12,7 @@ public class Minigames extends World
      */
     public Minigames(int x, int y, int cells)
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        // Create world using imput from subworlds
         super(x, y, cells); 
     }
 }

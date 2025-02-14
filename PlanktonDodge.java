@@ -1,9 +1,9 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class PlanktonDodge here.
+ * The final minigame in the demo where Spongebob needs to dodge Plankton's thrown items
  * 
- * @Laynah  @Quillan
+ * @Laynah  @Quillan 
  * @05-02-25 
  */
 public class PlanktonDodge extends Minigames

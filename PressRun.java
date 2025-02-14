@@ -1,18 +1,13 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class PressRun here.
+ * This world is used to put in some default settings and is only used during reset.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Brendon
+ * @14/02/2025
  */
 public class PressRun extends Menus
 {
-
-    /**
-     * Constructor for objects of class PressRun.
-     * 
-     */
     public PressRun()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.

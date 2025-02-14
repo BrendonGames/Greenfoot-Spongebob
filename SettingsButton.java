@@ -1,5 +1,11 @@
 import greenfoot.*;
 
+/*
+ * Buttons used in the settings menu
+ * 
+ * @Jesse @Brendon
+ * @14/02/2025
+ */
 public class SettingsButton extends Actor {
     private int settingType;
     int volume;

@@ -1,5 +1,6 @@
 #BlueJ class context
 comment0.target=DarkModeScreen
+comment0.text=\r\n\ A\ joke\ image\ pops\ up\r\n\ \r\n\ @Jesse\r\n\ @14/02/2025\r\n
 comment1.params=volumeSet\ gameSpeedSet\ musicSet\ languageId
 comment1.target=DarkModeScreen(int,\ int,\ boolean,\ int)
 numComments=2

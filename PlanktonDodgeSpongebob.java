@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class PlanktonDodgeSpongebob here.
+ * Spongebob is able to jump over Plankton's thrown obstacles. Each item does it's own damage
  * 
  * @Laynah @Quillan
- * @14-02-25 (a version number or a date)
+ * @14-02-25
  */
 public class PlanktonDodgeSpongebob extends Player
 {    

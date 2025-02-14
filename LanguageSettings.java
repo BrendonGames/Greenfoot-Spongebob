@@ -1,5 +1,11 @@
 import greenfoot.*;
 
+/*
+ * Change your language in this menu (unused during demo)
+ * 
+ * @Jesse
+ * @14/02/2025
+ */
 public class LanguageSettings extends World
 {
     int volume;

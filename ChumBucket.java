@@ -1,10 +1,10 @@
 // import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class ChumBucket here.
+ * Thrown item by Plankton
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Laynah @Quillan @Brendon
+ * @14/02/2025
  */
 public class ChumBucket extends Assets
 {

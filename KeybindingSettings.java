@@ -1,5 +1,11 @@
 import greenfoot.*;
 
+/*
+ * Menu to change your keybinds (unused during demo)
+ * 
+ * @Jesse
+ * @14/02/2025
+ */
 public class KeybindingSettings extends World
 {
     int volume;

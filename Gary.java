@@ -1,10 +1,10 @@
 // import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Garry here.
+ * Used during Gary is missing
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Brendon
+ * @24/02/2025
  */
 public class Gary extends Characters
 {

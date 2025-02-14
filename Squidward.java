@@ -1,10 +1,10 @@
 // import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Squidward 
+ * Squidward appears when being annoyed at his front door
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Brendon
+ * @12/02/2025
  */
 public class Squidward extends Characters
 {

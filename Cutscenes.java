@@ -1,14 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Cutscenes here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Collection (unused in demo)
  */
 public class Cutscenes extends World
 {
-
     /**
      * Constructor for objects of class Cutscenes.
      * 

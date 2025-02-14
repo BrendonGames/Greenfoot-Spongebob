@@ -1,10 +1,10 @@
 // import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class GaryIsMissing here.
+ * First minigame. Most is handled by PanickedSpongebob.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Brendon
+ * @03/02/2025
  */
 public class GaryIsMissingOutside extends Minigames
 {

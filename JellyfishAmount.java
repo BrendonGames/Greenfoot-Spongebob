@@ -2,9 +2,6 @@
 
 /**
  * Icon of a jellyfish besides a counter
- * 
- * @author (your name) 
- * @version (a version number or a date)
  */
 public class JellyfishAmount extends Assets
 {

@@ -1,5 +1,11 @@
 import greenfoot.*;
 
+/*
+ * Change the music volume (unused during demo)
+ * 
+ * @Jesse
+ * @14/02/2025
+ */
 public class MusicVolumeSettings extends World
 {
     int volume;

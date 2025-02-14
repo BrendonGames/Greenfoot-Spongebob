@@ -1,5 +1,11 @@
 import greenfoot.*;
 
+/*
+ * The menu for the settings buttons
+ * 
+ * @Jesse @Brendon 14/02/2025
+ */
+
 public class SettingsMenu extends World {
     private GreenfootSound backgroundMusic;
     int volume;

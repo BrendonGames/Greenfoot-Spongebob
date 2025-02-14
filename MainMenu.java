@@ -1,5 +1,12 @@
 import greenfoot.*;
 
+/*
+ * This is the main menu where you can choose what to do.
+ * (only play game and settings menu are available during demo)
+ * 
+ * @Jesse
+ * @14/02/2025
+ */
 public class MainMenu extends Menus
 {
     int volume;
@@ -24,14 +31,9 @@ public class MainMenu extends Menus
     }
 
     private void prepare() {
-        addObject(new MenuButton("X Gevonden geheimen X", new SettingsWorld(volume, gameSpeed, music, langId)), 400, 200);
-        addObject(new MenuButton("Speel spel", new GaryIsMissingOutside(0,0)), 400, 280);
-        addObject(new MenuButton("X Vrij spel X", new SettingsWorld(volume, gameSpeed, music, langId)), 400, 360);
-        addObject(new MenuButton("Instellingen", new SettingsWorld(volume, gameSpeed, music, langId)), 400, 440);
-
-    }
-
-    public void stopped() {
-        // menuMusic.stop(); // Stop the music when leaving the menu
+        addObject(new MenuButton("X Found secrets X", new SettingsWorld(volume, gameSpeed, music, langId)), 400, 200);
+        addObject(new MenuButton("Play game", new GaryIsMissingOutside(0,0)), 400, 280);
+        addObject(new MenuButton("X Freeplay X", new SettingsWorld(volume, gameSpeed, music, langId)), 400, 360);
+        addObject(new MenuButton("Settings", new SettingsWorld(volume, gameSpeed, music, langId)), 400, 440);
     }
 }

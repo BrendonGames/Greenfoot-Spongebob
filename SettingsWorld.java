@@ -1,4 +1,11 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*; // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+/*
+ * The world that leads to the settings
+ * 
+ * @Jesse @Brendon
+ * @14/02/2025
+ */
 
 public class SettingsWorld extends Menus
 {
@@ -14,6 +21,6 @@ public class SettingsWorld extends Menus
         music = musicSet;
         langId = languageId;
         showText("Instellingen", 400, 300);
-        addObject(new MenuButton("Instellingen", new SettingsMenu(volume, gameSpeed, music, langId)), 400, 440);
+        addObject(new MenuButton("Settings", new SettingsMenu(volume, gameSpeed, music, langId)), 400, 440);
     }
 }

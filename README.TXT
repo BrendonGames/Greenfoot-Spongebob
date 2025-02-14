@@ -6,7 +6,7 @@ all they need to know. The comments should usually include at least:
 
 PROJECT TITLE: Spongebob
 PURPOSE OF PROJECT: video game
-VERSION or DATE: idk
-HOW TO START THIS PROJECT: Menus > new MainMenu()
+VERSION or DATE: 14/02/2025
+HOW TO START THIS PROJECT: Menus > new PressRun()
 AUTHORS: Brendon; Laynah; Jesse; Quillan;
-USER INSTRUCTIONS: none
+USER INSTRUCTIONS: Most should be obvious, some are mentioned. (A & D for left and right; W & S for back and forward; Space for jumping or interacting)

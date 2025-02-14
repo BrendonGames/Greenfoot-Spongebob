@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Platform here.
+ * The platform Spongebob can stand on during the Gary is missing minigame
  * 
  * @Brendon
  * @14/02/2025

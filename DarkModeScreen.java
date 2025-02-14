@@ -1,5 +1,12 @@
 import greenfoot.*;
 
+/*
+ * A joke image pops up
+ * 
+ * @Jesse
+ * @14/02/2025
+ */
+
 public class DarkModeScreen extends World
 {
     int volume;

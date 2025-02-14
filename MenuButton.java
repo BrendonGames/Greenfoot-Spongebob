@@ -1,5 +1,11 @@
 import greenfoot.*;
 
+/*
+ * Buttons for the main menu
+ * 
+ * @Jesse
+ * @14/02/2025
+ */
 public class MenuButton extends Assets {
     private String text;
     private World targetWorld;
